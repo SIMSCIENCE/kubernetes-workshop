@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: helloworld-service
   # set your namespace
-  namespace: <namespace>
+  namespace: svdh
 spec:
   ports:
     - port: 8080

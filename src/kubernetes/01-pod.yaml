@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: helloworld
   # set your namespace
-  namespace: <namespace>
+  namespace: svdh
   labels:
     app: helloworld
 spec:

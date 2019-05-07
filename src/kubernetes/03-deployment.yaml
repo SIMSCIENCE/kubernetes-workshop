@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: helloworld
   # set your namespace
-  namespace: <namespace>
+  namespace: svdh
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -31,6 +31,13 @@ spec:
               port: 8079
             initialDelaySeconds: 5
             periodSeconds: 10
+          volumeMounts:
+            - mountPath: /opt/data
+              name: data-volume
           env:
             - name: JAVA_PARAMS
-              value: "--server.servlet.context-path=/<context-path>"
+              value: "--server.servlet.context-path=/sh"
+          volumes:
+            - name: data-volume
+            persistentVolumeclaim:
+              claimName: helloworld-pvc
